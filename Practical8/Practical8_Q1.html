@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<head><title>Validation and Nested Loops</title>
+</head> 
+<body>
+<form id = "times" name = "times">
+<h2>Generate your a times table</h2>
+<label>Enter Row Number:</label>   
+<input type = "text" id = "row" name = "row"><br /><br />
+<label>Enter Column Number:</label>
+<input type = "text" id = "col" name = "col"><br /><br />
+<label>Search Number: </label>
+<input type = "text" id = "search" name = "search"><br /><br />
+<input type = "button" value = "generate times table." onclick = "table();">
+<input type = "button" value = "search" onclick = "find_9();">
+    </form>
+
+<script type = "text/javascript" language="javascript">
+function table(){
+var num1 = document.getElementById("row").value;
+var num2 = document.getElementById("col").value;
+var num1 = parseInt(num1);
+var num2 = parseInt(num2);
+    
+document.write('<table border = "1" cellspacing = "6">');
+for(i=0;i<=num1;i++){
+for(j=1;j<=num2;j++){
+document.write('<td align= "center">' + i + "x" + j + " = " + i*j + '</td>');
+}
+document.write("</tr>\n");
+}
+document.write("</table>");    
+}
+    
+function find_9(){
+var num1 = document.getElementById("row").value;
+var num2 = document.getElementById("col").value;
+var num1 = parseInt(num1);
+var num2 = parseInt(num2);
+    
+for(i=0; i<=num1; i++){
+for(j=1; j<=num2; j++){
+if(i*j==9){
+document.write("Found 9 at Row " + i + " and column " + j + "<br />");
+}
+}
+}
+}
+
+
+</script>
+
+</body>
+    
+</html>

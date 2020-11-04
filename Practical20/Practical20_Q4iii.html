@@ -1,0 +1,26 @@
+<html>
+<head>
+<meta charset = "UTF-8">
+<title>Practical20_Q4iii</title>
+<script type = "text/javascript" src = "js/jquery-3.1.1.js">
+</script>
+<script>
+$(document).ready(function (){
+    $(".fadein").click(function(){
+        $("img").fadeIn();
+    });
+    $(".fadeout").click(function(){
+        $("img").fadeOut();
+    });
+});
+    
+</script>
+    </head>
+<body>
+<h2>Fade In Fade Out</h2>
+<p>Fade in and out</p>
+<img src = "mark1.jpg" width = "250px" height = "200px" />
+<button class = "fadein">Fade In</button>
+<button class = "fadeout">Fade Out</button>
+</body>
+</html>

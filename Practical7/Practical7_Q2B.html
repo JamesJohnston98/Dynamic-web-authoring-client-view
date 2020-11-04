@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<head><title>Conditional Branches</title>
+    </head> 
+<body>
+<form id = "myform">
+    <p>Input your marks to calculate your average:</p>
+<label>Mark1:</label><input type = "text" name = "number" id = "number"><br /><br />
+<label>Mark2:</label><input type = "text" name = "number" id = "number"><br /><br />
+<label>Mark3:</label><input type = "text" name = "number" id = "number"><br /><br />
+<label>Mark4:</label><input type = "text" name = "number" id = "number"><br /><br />
+<input type = "button" id = "click" value = "Calculate Average" onclick = "Average();">
+</form>  
+    
+<script type = "text/javascript" language = "JavaScript">
+
+function Average(){
+    
+var num1 = document.getElementById("number1");
+var num2 = document.getElementById("number2");
+var num3 = document.getElementById("number3");
+var num4 = document.getElementById("number4");
+    
+if (num1 == "" && num2 == "" && num3 == "" && num4 == "")
+window.alert("Please Fill in all marks!")  
+    
+
+var arr = document.getElementsByName("number");
+var total = 0;
+var average = 0;
+    
+for(var i = 0; i < arr.length; i++){
+if(parseInt(arr[i].value)){
+ total += parseInt(arr[i].value);
+}
+}
+average = total/arr.length;
+
+if(average >90&& average<=100){
+window.alert("You got an A, your average mark is " + average);
+}
+else if(average >80&& average<=90){
+window.alert("You got a B, your average mark is " + average);
+}
+else if(average >70&& average<=80){
+window.alert("You got a C, your average mark is " + average);
+}
+else if(average >60&& average<=70){
+window.alert("Yout got a D, your average mark is " + average );
+}
+else if (average >50&& average<=60){
+window.alert("You got an E, failed " + average);
+}
+else{
+window.alert("Please fill in all marks!");
+}
+  
+var grade = average;
+
+ switch(true) {
+
+    case (average >90 && average <=100):
+    alert("Outstanding!");
+    break;
+    case (average>80 && average <=90):
+    alert("Very Good!");
+    break;
+    case (average >70 && average <=80):
+    alert("Fairly Good!");
+    break;
+    case (average >60 && average <=70):
+    alert("Doing Ok!");
+    break;
+    case (average >50 && average <=60):
+    alert("Need to work Harder!");
+    break;
+    default:
+    alert("Unknown Grade!");
+}  
+}
+    </script>
+</body>
+</html>

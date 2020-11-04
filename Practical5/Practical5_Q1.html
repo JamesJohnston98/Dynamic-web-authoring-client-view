@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<head><title>JavaScript Form</title>
+
+</head>
+<body>
+<form id = "myform">
+<p>Please Type Your Name and click the button:</p>
+    
+<label><b>Input Your Name Below:</b></label><br /><br />
+<input type = "text" name = "name" id = "name"><br /><br />
+    <label><b>Select the University you attend below:</b></label><br /><br />
+<select id = "uni" name = "uni">
+<option value = "QUB">QUB</option>
+    <option value = "Ulster">Ulster</option></select><br /><br />
+<label><b>Select the Campus you are based:</b></label><br /><br />
+<select id= "campus" name = "campus">
+<option value = "Jordanstown">Jordanstown</option>
+<option value = "Magee">Magee</option>
+<option value = "Coleraine">Coleraine</option>
+<option value = "Belfast">Belfast</option>
+<option Value = "QUB Belfast">QUB Belfast</option></select><br /><br />
+    
+<label><b>Select the course you are doing from the list below:</b></label><br /><br />
+<select id = "course" name = "course">
+<option value = "Software Engineering">Software Engineering</option>
+<option value = "Interactive Multimedia Design">Interactive Multimedia Design</option>
+<option value = "Computer Science">Computer Science</option>
+<option value = "Computer Technologies">Computer Technologies</option></select><br /><br />
+    
+<input type = "button" id = "click" value = "Show Information" onsubmit="submit();">
+</form>
+    
+<p id = "studentname"></p>
+<p id = "uniname"></p>
+<p id = "campusname"></p>
+<p id = "coursename"></p>
+    
+ <Script type = "text/javascript" language = "JavaScript">
+ 
+     
+var form = document.getElementById('myform');
+form.onsubmit = function(event){
+    event.preventDefault();
+    var output = document.getElementById('studentname');
+    output.innerHTML = form.name.value;
+    form.reset();
+};
+     
+
+
+     
+document.getElementById("click").addEventListener("click", function(){
+         var x=[];
+         var select = document.querySelectorAll('select');
+
+         select.forEach(function(el,i){
+        	 x[i] = el.value; 
+        })
+var output =  document.getElementById('studentname');
+    output.innerHTML = 'Hello ' + form.name.value;
+var output2 = document.getElementById('uniname');
+		output2.innerHTML = 'The university, campus and course you selected were:' + ' ' + x + ' ';
+   });
+    </Script>    
+    </body>
+</html>

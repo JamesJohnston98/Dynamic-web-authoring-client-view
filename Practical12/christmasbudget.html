@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<head><title>Week 12 - Christmas Budget</title>
+<script type='text/javascript' language='Javascript'>
+
+function calculation(num1, num2, num3, num4, num5, num6){
+var num1 = document.christmas_budget.num1.value;
+var num2 = document.christmas_budget.num2.value;
+var num3 = document.christmas_budget.num3.value;
+var num4 = document.christmas_budget.num4.value;
+var num5 = document.christmas_budget.num5.value;
+var num6 = document.christmas_budget.num6.value;
+    
+   
+var expenditure = parseInt(num1)+parseInt(num2)+parseInt(num3)+parseInt(num4)+parseInt(num5);
+var budget = parseInt(num6);
+var total_expenditure = budget-expenditure;
+
+document.write("Your Balance before the spending is £" + budget + ".00" + "<br />");
+document.write("Account after expenditure is £" + total_expenditure + ".00" + "<br />");
+    
+if(total>=0){
+document.write("Merry Christmas and Enjoy Your Holiday");
+}
+else{
+document.write("Merry Christmas and dont get painful after the holiday!");
+}    
+    
+}
+    </script>
+    </head>
+    
+<body>
+<form id = "christmas_budget" name = "christmas_budget">
+<h2>Calculate your chritmas budget</h2>
+<p>Please enter the values for each set of presents and your available budget below:</p>
+<label>Presents for family:</label>
+<input type = "text" name = "num1" id = "num1"><br/>
+    
+<label>Presents for friends:</label>
+<input type = "text" name = "num2" id = "num2"><br />
+
+<label>Presents for self:</label>
+<input type = "text" name = "num3" id = "num3"><br />
+    
+<label>Party cost:</label>
+<input type = "text" name = "num4" id = "num4"><br />
+    
+<label>Holiday Food and Drink:</label>
+<input type = "text" name = "num5" id = "num5"><br />
+    
+<label>Budget Available:</label>
+<input type = "text" name = "num6" id = "num6"><br />
+    
+<input type = "button" value = "calculate budget" onclick = "calculation();">
+       
+       </form>    
+
+</body>
+    
+</html>

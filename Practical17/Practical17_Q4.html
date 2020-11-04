@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF-8">
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type = "text/javascript">
+function checkcampus(){
+    $(document).ready(function(){
+        $("input[type='button']").click(function(){
+            var CampusChoice = $("input[name='Campus']:checked").val();
+            if(CampusChoice == "Belfast"){
+                alert("Your at " + CampusChoice + " Campus. Not the same Campus" );
+            }
+            else if(CampusChoice == "Jordanstown"){
+            alert("You are at " + CampusChoice + " We are both at the same Campus.")
+            }
+            else if(CampusChoice == "Coleraine"){
+            alert("You are at " + CampusChoice + " We are Not on the same campus.")
+            }
+            else if(CampusChoice == "Magee"){
+            alert("You are at " + CampusChoice + " We are Not at the same Campus.")
+            }
+        });
+        
+    });
+}
+    </script>
+    </head>
+<body>
+<input type = "radio" name = "Campus" value = "Belfast">Belfast
+<input type = "radio" name = "Campus" value = "Jordanstown">Jordanstown
+<input type = "radio" name = "Campus" value = "Coleraine">Coleraine
+<input type = "radio" name = "Campus" value = "Magee">Magee
+
+
+
+<input type = "button" name = "count" value = "Check Location" onclick = "checkcampus();">
+    </body></html>

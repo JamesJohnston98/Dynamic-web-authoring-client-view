@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dragable demo</title>
+  <link rel="stylesheet" href="CSS/jquery-ui.min.css">
+  <script src="JS/jquery-3.1.1.js"></script>
+  <script src="JS/jquery-ui.min.js"></script>
+
+
+<style type="text/css">
+    #drag {
+        width: 150px;
+        height: 150px;
+        padding: 0.5em;
+        float: left;
+        margin: 10px 10px 10px 0;        
+    }
+      #drag-invalid {
+        width: 150px;
+        height: 150px;
+        padding: 0.5em;
+        float: left;
+        margin: 10px 10px 10px 0;        
+    }
+    #drop {
+        width: 1000px;
+        height: 250px;
+        padding: 0.5em;
+        float: left;
+        margin-top: 100px;
+    }
+</style>
+  
+
+<script>
+  $( function() {
+    $( "#drag, #drag-nonvalid" ).draggable();
+    $( "#drop" ).droppable({
+      accept: "#drag",
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Correct Selection Made!" );
+      }
+    });
+  } );
+
+</script></head><body>
+ 
+<!-- HTML -->
+<h1>Drag and Drop the cars into the box below</h1>
+<div id="drag" class="ui-widget-content">
+  <img src = "img/mark2_1.jpg" width = "100%" height = "100%">
+</div>
+ 
+<div id="drag" class="ui-widget-content">
+  <img src = "img/mark2.jpg" width = "100%" height = "100%">
+</div>
+<div id="drag-invalid" class="ui-widget-content">
+  <img src = "img/castle.jpg" width = "100%" height = "100%">
+</div>
+<div id="drag" class="ui-widget-content">
+  <img src = "img/208.jpg" width = "100%" height = "100%">
+</div>
+<div id="drag" class="ui-widget-content">
+  <img src = "img/mark2_4.jpg" width = "100%" height = "100%">
+</div>
+<div id="drag-invalid" class="ui-widget-content">
+  <img src = "img/harbour.JPG" width = "100%" height = "100%">
+</div>
+<div id="drag" class="ui-widget-content">
+  <img src = "img/mark2_3.jpg" width = "100%" height = "100%">
+</div>
+<div id = "drop" class = "ui-widget-header">
+<p>Place Cars here</p>   
+</div>
+
+   
+
+  </body></html>

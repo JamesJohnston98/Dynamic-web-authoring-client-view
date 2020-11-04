@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF-8">
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type = "text/javascript">
+   function countselects(){
+       
+            alert("Number of options selected is " + $("select option:selected").length);
+       
+    $( "select" )
+  .change(function() {
+    var Holiday = "";
+    $( "select option:selected" ).each(function() {
+      Holiday += $( this ).text() + " ";
+    });
+    $( "p" ).text( Holiday ) + "<br />";
+  })
+  .trigger( "change" );
+}
+    
+
+    </script>
+    </head>
+<body>
+<select name="holiday" multiple="multiple">
+  <option>Option 1: 5 Days in Rome</option>
+  <option>Option 2: 7 Days in Washington</option>
+  <option>Option 3: 3 Days in Malta</option>
+  <option>Option 4: 7 Days in Hong Kong</option>
+</select>
+<p></p>
+<input type = "button" name = "count" value = "CountChecked" onclick = "countselects();">
+    </body></html>

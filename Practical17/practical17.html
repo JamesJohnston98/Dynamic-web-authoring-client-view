@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF-8">
+<script type="text/javascript" src = "js/jquery-3.1.1.js"></script>
+<script type = "text/javascript">
+   function countChecks(){
+       
+            alert("Number of Check boxes currently selected is " + $(":checkbox:checked").length);
+}
+    </script>
+    </head>
+<body>
+<form name = "checkbox" id = "check">Check1
+<input type = "checkbox" name = "check2">Check2
+<input type = "checkbox" name = "check3">Check3
+<input type = "checkbox" name = "check3">Check4
+<input type = "button" name = "count" value = "CountChecked" onclick = "countChecks();">
+</form>
+
+    </body></html>

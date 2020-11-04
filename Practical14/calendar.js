@@ -1,0 +1,22 @@
+var Days = new Array();
+Days[0]="Sunday";
+Days[1]="Monday";
+Days[2]="Tuesday";
+Days[3]="Wednesday";
+Days[4]="Thursday";
+Days[5]="Friday";
+Days[6]="Saturday";
+
+var Months = new Array();
+Months[0]="January";
+Months[1]="February";
+Months[2]="March";
+Months[3]="April";
+Months[4]="May";
+Months[5]="June";
+Months[6]="July";
+Months[7]="August";
+Months[8]="September";
+Months[9]="October";
+Months[10]="November";
+Months[11]="December";

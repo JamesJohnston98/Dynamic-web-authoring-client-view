@@ -1,0 +1,22 @@
+<html>
+<head>
+<meta charset = "UTF-8">
+<title>Practical20_Q3b</title>
+<script type = "text/javascript" src = "js/jquery-3.1.1.js">
+</script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+    $.ajax({url:"test1.html", success: function(result){
+        $("div").html(result);
+    }});
+    });
+});
+   
+</script>
+    </head>
+<body>
+<div><h2>Let AJAX change this text</h2></div>
+<button>ChangeContent</button>
+</body>
+</html>

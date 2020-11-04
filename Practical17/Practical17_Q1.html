@@ -1,0 +1,29 @@
+  <html>
+  <head>
+    <title>Hide and show paragraphs</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+
+    <script type="text/javascript">
+    
+    function SelectElement(){
+    var len= $('p').size();
+    alert(len);
+     for(i=0;i<len; i++){
+     $('p').innerHTML="<i>Hello James!</i>;"
+     }
+    }
+    </script>
+
+  </head>
+<body>
+
+<h1>Select An Element</h1>
+  <div>
+    <p>This is paragraph 1.</p>
+    <p>This is paragraph 2.</p>
+    <p>This is paragraph 3.</p>
+    <p>This is paragraph 4.</p>
+  </div>
+  <form>
+ <input type = "button" value="Change Content" onclick="SelectElement()"></form>
+      </body></html>

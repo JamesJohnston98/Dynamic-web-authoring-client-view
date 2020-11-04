@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta charset = "UTF-8">
+<title>Practical20_Q4ii</title>
+<script type = "text/javascript" src = "js/jquery-3.1.1.js">
+</script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("img").toggle();
+    });
+});
+</script>
+    </head>
+<body>
+<h2>toggle Images</h2>
+<p>Click the button to toggle between images</p>
+<div id = "Imagetoggle">
+<img src = "mark1.jpg" width = "250px" height = "200px" />
+<img src = "mark2.jpg" width = "250px" height = "200px" style = "display:none;"/>
+<button>Toggle images</button>
+</div>
+</body>
+</html>

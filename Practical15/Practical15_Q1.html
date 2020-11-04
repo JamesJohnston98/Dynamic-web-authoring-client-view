@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" language = "EN" ><head><title>Practical15_cookies</title>
+<meta charset = "UTF-8">
+    
+<script type="text/javascript" language="JavaScript" src="library.js">
+</script>
+    <script language="JavaScript">
+function Register() {
+  alert("Please Register");
+}
+
+var today = new Date();
+  var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+
+  function setCookie(name, value)
+  {
+    document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+  }
+        
+  function getCookie(name)
+  {
+    var re = new RegExp(name + "=([^;]+)");
+    var value = re.exec(document.cookie);
+    return (value != null) ? unescape(value[1]) : null;
+  }
+
+
+function createCookies(){
+var now = new Date();
+    var lvisit = now.toLocaleString();
+    var expHour = 24;
+    var expDate = new Date();
+    expDate.setTime(expDate.getTime() + (expHour * 60 * 60 * 1000)); 
+    var username = document.coffeeform.username.value;
+    var password = document.coffeeform.password.value;
+    SetCookie("lastvisited",lvisit,expDate);
+    SetCookie("username",username,expDate);
+    alert("You Have Registered successfully!");
+}
+function showCookies(){
+    var lastvisit = GetCookie("lastvisited");
+    if (lastvisit){
+        var user = GetCookie("username");
+        var thepassword = GetCookie("password");
+        var welcome = "Welcome back, " + user + ".";
+        welcome += "Your last visit was:\n" + lastvisit + ".";
+      alert(welcome);
+    }   
+    else{
+    alert("Please Register!")
+    }
+    }
+
+function deleteCookies(){
+    DeleteCookie("lastvisited");
+    DeleteCookie("username");
+    DeleteCookie("password");
+    alert("Your Username and password have been deleted");
+    document.coffeeform.username.value = "Please Enter your name";
+    document.coffeeform.username.value = "Please enter a password";
+}
+
+function Login(){
+    var checkpassword = getCookie("password");
+    var visitorpassword = document.coffeeform.password.value;
+ if(visitorpassword == checkpassword) window.location.href = "Practical15_Q2.html";
+ else window.alert("Your Password is incorrect!")
+}
+
+    
+    </script></head>
+    <body onload="showCookies();">
+    <h1>Welcome to 16Coffee!</h1>
+    <form id = "coffee" name = "coffeeform">
+    Username: <input type = "text" name = "username" placeholder = "Username" size = "25">
+    Create your password: <input type = "text" name = "password" placeholder = "Password" size = "25"><br /><br />
+    <input type = "button" value = "Remember Password" onclick = "createCookies();"><br /><br />
+    <input type = "button" value = "login" onclick = "Login()"><br /><br />
+    <input type = "reset" value = "reset" onclick = "deleteCookies();">
+    </form>
+    
+    
+    </body>
+    </html>

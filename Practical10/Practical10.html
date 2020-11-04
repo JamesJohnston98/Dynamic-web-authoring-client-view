@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<head><title>Week 10</title>
+<script type='text/javascript' language='Javascript'>
+    
+var rallycarON = new Image;
+var mark2ON = new Image;
+var angliaON = new Image;
+var mark1ON = new Image;
+var starletON = new Image;
+    
+var rallycarOFF = new Image;
+var mark2OFF = new Image;
+var angliaOFF = new Image;
+var mark1OFF = new Image;
+var starletOFF = new Image;
+    
+var rallycarINFO = new Image;
+var mark2INFO = new Image;
+var angliaINFO = new Image;
+var mark1INFO = new Image;
+var starletINFO = new Image;
+    
+rallycarON.src ="../Images/FavouriteRallyCarsOn.png";
+mark2ON.src = "../Images/Mark2EscortOn.png";
+angliaON.src="../Images/FordAngliaOn.png";
+mark1ON.src="../Images/Mark1On.png";
+starletON.src = "../Images/ToyotaStarletOn.png";
+
+rallycarOFF.src= "../Images/FavouriteRallyCarsOff.png";
+mark2OFF.src = "../Images/Mark2EscortOff.png";
+angliaOFF.src = "../Images/FordAngliaOff.png";
+mark1OFF.src = "../Images/Mark1off.png";
+starletOFF.src = "../Images/ToyotaStarletOff.png";
+    
+mark2INFO.src = "../Images/mark2info.jpg";
+angliaINFO.src = "../Images/angliainfo.jpg";
+mark1INFO.src = "../Images/mark1info.jpg";
+starletINFO.src = "../Images/starletinfo.jpg"
+
+function swapImg(version, imgname){
+    if (document.images){
+        document[imgname].src = eval(imgname + version + ".src");
+        document['info'].src = eval(imgname + "INFO.src");
+    }
+}
+
+function rollOff(){
+swapImg('OFF', 'rallycar');
+swapImg('OFF', 'mark2');
+swapImg('OFF', 'anglia');
+swapImg('OFF', 'mark1');
+swapImg('OFF', 'starlet');
+}
+    </script>
+    </head>
+    
+<body>
+<div align = "center">
+<a href="https://scm.ulster.ac.uk/~B00730860/workspace/COM311/com311." onmouseover=
+"swapImg('ON','rallycar');" onmouseout="rollOff();"
+onclick="rollOff();return true;"><img src=
+"../Images/FavouriteRallyCarsOff.png" name=
+"rallycar" border="0" alt="RallyCar"></a> <br /><br />
+    
+<a href="https://scm.ulster.ac.uk/~B00730860/workspace/COM311/com311." onmouseover="swapImg('ON','mark2');"
+onmouseout="rollOff();" onclick="rollOff();return true;"><img
+src="../Images/Mark2EscortOff.png" name="mark2"
+border="0" alt="mark2"></a><br />
+
+<a href="https://scm.ulster.ac.uk/~B00730860/workspace/COM311/com311." onmouseover="swapImg('ON','anglia');"
+onmouseout="rollOff();" onclick="rollOff();return true;"><img
+src="../Images/FordAngliaOff.png" name="anglia"
+border="0" alt="anglia"></a><br />
+    
+<a href="https://scm.ulster.ac.uk/~B00730860/workspace/COM311/com311." onmouseover="swapImg('ON','mark1');"
+onmouseout="rollOff();" onclick="rollOff();return true;"><img
+src="../Images/Mark1off.png" name="mark1"
+border="0" alt="mark1"></a><br />  
+    
+<a href="https://scm.ulster.ac.uk/~B00730860/workspace/COM311/com311." onmouseover="swapImg('ON','starlet');"
+onmouseout="rollOff();" onclick="rollOff();return true;"><img
+src="../Images/ToyotaStarletOff.png" name="starlet"
+border="0" alt="starlet"></a><br /> 
+    
+<a href="#" onmouseover="rollOffAll();" onmouseout="rollOff();"
+onclick="rollOff();return false;"><img src="../Images/Additional_IMG.jpg"
+width="450" height="300" name="info" border="0" alt="Dates"></a>
+    
+</div>
+</body>
+    
+</html>

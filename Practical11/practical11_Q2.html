@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<head><title>Week 11 - Slideshow/animated banner</title>
+<script type='text/javascript' language='Javascript'>
+var rally_car = new Array();
+rally_car[1] = new Image();
+rally_car[2] = new Image();
+rally_car[3] = new Image();
+rally_car[4] = new Image();
+
+
+rally_car[1].src = "../Images/angliainfo.jpg";
+rally_car[2].src = "../Images/mark1info.jpg";
+rally_car[3].src = "../Images/mark2info.jpg";
+rally_car[4].src = "../Images/starletinfo.jpg";
+
+
+/*Callout: The text captions are stored in another array.*/
+var Rally_Note = new Array();
+Rally_Note[1] = "Ford Anglia WRC at Loughgall Stages";
+Rally_Note[2] = "Keith White @ Loughgall Stages";
+Rally_Note[3] = "Barry Morris Sideways @ Loughgall Stages";
+Rally_Note[4] = "Jason Black flat out at the Loughgall Stage"; 
+
+var IMGnum = 1;
+var totalIMG = rally_car.length - 1;
+
+function showImage(direction){
+    if (direction == "next"){
+        (IMGnum == totalIMG) ? IMGnum = 1 : IMGnum++;
+    }else{
+        (IMGnum == 1) ? IMGnum = totalIMG : IMGnum--; 
+    }
+    if (document.images){
+        document.Image_location.src = rally_car[IMGnum].src;
+        document.Control_Buttons.Info.value = Rally_Note[IMGnum];
+        document.Control_Buttons.current.value = IMGnum;
+    }
+}
+//-->
+var rally = new Array();
+rally[1] = new Image();
+rally[2] = new Image();
+rally[3] = new Image();
+rally[4] = new Image();
+
+rally[1].src = "../Images/angliainfo.jpg";
+rally[2].src = "../Images/mark1info.jpg";
+rally[3].src = "../Images/mark2info.jpg";
+rally[4].src = "../Images/starletinfo.jpg";
+
+/* Callout: The timings represent the number of milliseconds delay between the images.*/
+var Time_Period = new Array();
+Time_Period[1] = 1500;
+Time_Period[2] = 1500;
+Time_Period[3] = 1500;
+Time_Period[4] = 1500;
+
+var Rally_Web = new Array();
+Rally_Web[1] = "https://www.wrc.com/en/";
+Rally_Web[2] = "https://www.fiaerc.com/";
+Rally_Web[3] = "http://www.irishtarmac.com/";
+Rally_Web[4] = "http://www.namcc.com/";
+
+var Rallynum = 0;
+var totalrally = rally.length - 1;
+var tID = "";
+
+function LoadBanner(){
+    Rallynum = 0;
+    showRallyBanner();
+}
+function showRallyBanner(){
+    if (document.images){
+        /*Allows the image to rotate in the order that they have been entered into the banner.*/
+        if (document.myBanner.complete){
+            Rallynum++;
+            (Rallynum > totalrally) ? Rallynum=1 : Rallynum=Rallynum;
+            document.myBanner.src = rally[Rallynum].src;
+        }
+        tID = setTimeout("showRallyBanner()",Time_Period[Rallynum]);
+    }
+}
+function goRallyWeb(){
+    clearTimeout(tID);
+    window.location.href = Rally_Web[Rallynum];
+}
+    </script>
+    </head>  
+<body bgcolor="white" onload = "LoadBanner();">
+<div align="CENTER">
+<h2>Photos taken by me at the Loughgall Rally 2018</h2>
+
+<img src="../Images/angliainfo.jpg" name="Image_location" width="320"
+height="240" alt="Slide show images appear here."> 
+
+<form name="Control_Buttons">
+<p><textarea name="Info" rows="2" cols="50">Our First Image is the Ford Anglia WRC at Loughgall Stages 2018</textarea><br>
+<br>
+<input type="button" value="Previous" onclick="showImage('previous');"> 
+<input type="button" value="Next" onclick="showImage('next');"><br>
+<br>
+Slide Number: 
+<input type="TEXT" value="1" name="current" size="5"></p>
+</form>
+</div>
+<!--Banner will run with the number of the images that have been added to it and when clicked will open the corresponding external website.-->  
+<div align="CENTER">
+<a href="https://www.wrc.com/en/" onclick=
+"goRallyWeb();return false;"><img src="../Images/angliainfo.jpg"
+name="myBanner" width="500" height="250" border="0" alt="composer dictionary"></a></div>
+    
+</body>
+</html>

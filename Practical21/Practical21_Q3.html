@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dragable demo</title>
+  <link rel="stylesheet" href="CSS/jquery-ui.min.css">
+  <script src="JS/jquery-3.1.1.js"></script>
+  <script src="JS/jquery-ui.min.js"></script>
+
+
+<style type="text/css">
+.box {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 10px;
+    float: left;
+    margin-left: 5px;
+    text-align: center;
+    font-size: 12px;
+}
+ 
+#draglargebox {
+    width: 800px;
+    height: 150px;
+    border: 1px solid gray;
+    background-color: #E0F0FF;
+}
+ 
+    
+#x {
+    width: 800px;
+    height: 80px;
+    border: 1px solid gray;
+    background-color: #E0F0FF;
+    float: left;
+}
+</style>
+  
+
+<script>
+$(function () {
+        $("#draglargebox div[id^='drag']").draggable({
+                containment: "#draglargebox",
+                stack: ".box"
+        });
+       $("#x div[id^='drag']").draggable({
+                containment: "#x",
+                stack: ".box",
+                axis: "x"
+        });
+    
+    
+        /* make draggable div always on top */
+        $("div[id^='drag']").mousedown(function () {
+                $("div[id^='drag']").each(function () {
+                        var seq = $(this).attr("id").replace("drag", "");
+                        $(this).css('z-index', seq);
+                });
+        });
+});
+</script></head><body>
+ 
+<!-- HTML -->
+<h1>Simple Games for fun</h1>
+<div style="float:left;margin-left:30px;">
+    Place relating items into groups
+    <div id="draglargebox">    
+        <div id="drag1" class="box" style="background-color:orange">Train</div>
+        <div id="drag2" class="box" style="background-color:yellow">Apple</div>
+        <div id="drag3" class="box" style="background-color:pink">Bus</div>
+        <div id="drag4" class="box" style="background-color:white">Car</div>
+        <div id="drag5" class="box" style="background-color:mediumpurple">Pear</div>
+        <div id="drag6" class="box" style="background-color:greenyellow">Orange</div>
+        <div id="drag6" class="box" style="background-color:turquoise">Taxi</div>
+    </div>     
+<div>Sort these Spring Season Items alphabetically</div>
+<div id="x">        
+    <div id="drag1" class="box" style="background-color:lightskyblue">Chick</div>
+    <div id="drag2" class="box" style="background-color:lightpink">Egg</div>
+    <div id="drag3" class="box" style="background-color:orangered">Bunny</div>
+    <div id="drag4" class="box" style="background-color:yellow">Spring</div>
+    <div id="drag5" class="box" style="background-color:orange">Chocolate</div>
+    <div id="drag6" class="box" style="background-color:antiquewhite">LongerDays</div>
+    <div id="drag7" class="box" style="background-color:mediumpurple">Sweets</div>
+    <div id="drag8" class="box" style="background-color:blue">bonnet</div>
+    <div id="drag9" class="box" style="background-color:chocolate">Lambs</div>
+    <div id="drag10" class="box" style="background-color:gold">Daffodil</div>
+    </div>   
+</div>
+  </body></html>

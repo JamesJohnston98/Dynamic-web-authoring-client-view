@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<head><title>Looping</title>
+    </head> 
+<body>
+<form id = "myform">
+    <p>Input a number to start the countup:</p>
+<input type = "text" id = "number"><br /><br />
+
+<input type = "button" id = "click" value = "Start Counting Up" onclick = "countup();">
+<input type = "button" id = "click" value = "Start Counting Down" onclick = "countdown();">
+<input type = "button" id = "click" value = "Start Counting Total" onclick = "sum();">
+<input type = "button" id = "click" value = "Display Even Numbers" onclick = "evennumber();">
+<input type = "button" id = "click" value = "Display Odd Numbers" onclick = "oddnumber();">
+</form>  
+    
+<script type = "text/javascript" language = "JavaScript">
+
+
+function countup(){
+var count = document.getElementById("number");
+
+var a = 0;
+var b = count.value;
+/*
+for loop to return the value as a count from zero to the number the user has inputted.
+*/
+for(i = a; i<=b; i++){
+document.write("Counter i =" + i + "<br />");
+}
+document.write("count is complete");
+}
+    
+function countdown(){
+var count = document.getElementById("number");
+var a = count.value;
+var b = 0;
+/*
+do while look to count down from the entered number to 0
+*/
+do {
+document.write("Counter i =" + a + "<br />"); 
+a--;
+}    
+while(a >= b)
+document.write("count is complete");
+}
+
+
+function sum(){
+var count = document.getElementById("number")   
+var a = count.value;
+var sum = 0;
+var i = 0;
+/*
+while loop to count up all the numbers between 0 and the entered value and returns this total
+*/
+while(i<=a){
+	sum+=i;
+	i++;
+} 
+document.write("Counting is complete! " + "The total is: " + sum)
+}
+
+function evennumber(){
+var count = document.getElementById("number");
+var a = 0;
+var b = count.value;
+/*
+for loop which will display all of the even numbers between 0 and the entered value.
+*/
+for(i = a; i<=b; i++){
+if (i%2>0)continue;
+document.write('Counter i = ' + i + '<br />');
+}
+document.write('count is complete');
+}
+  
+function oddnumber(){
+var count = document.getElementById("number");
+var a = 0;
+var b = count.value;
+/*
+For loop that will return all the odd numbers between 0 and then entered value.
+*/
+for(i = a; i<=b; i++){
+if (i%2!=0)
+document.write('Counter i = ' + i + '<br />');
+}
+document.write('count is complete');
+}
+    </script>
+</body>
+</html>

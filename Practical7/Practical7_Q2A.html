@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<head><title>Conditional Branches</title>
+    </head> 
+<body>
+<form id = "myform">
+    <p>Input your marks to calculate average:</p>
+<label>Mark1:</label><input type = "text" name = "number" id = "number1"><br /><br />
+<label>Mark2:</label><input type = "text" name = "number" id = "number2"><br /><br />
+<label>Mark3:</label><input type = "text" name = "number" id = "number3"><br /><br />
+<label>Mark4:</label><input type = "text" name = "number" id = "number4"><br /><br />
+<input type = "button" id = "click" value = "Calculate Average" onclick = "Average();">
+</form>  
+    
+<script type = "text/javascript" language = "JavaScript">
+
+function Average(){
+
+var num1 = document.getElementById("number1");
+var num2 = document.getElementById("number2");
+var num3 = document.getElementById("number3");
+var num4 = document.getElementById("number4");
+    
+if (num1 == "" && num2 == "" && num3 == "" && num4 == "")
+window.alert("Please Fill in all marks!")
+    
+var arr = document.getElementsByName("number");
+var total = 0;
+var av = 0;
+    
+for(var i = 0; i < arr.length; i++){
+if(parseInt(arr[i].value)){
+ total += parseInt(arr[i].value);
+}
+}
+av = total/arr.length;
+    
+if(av >90&& av<=100){
+window.alert("You got an A, your average mark is " + av);
+}
+else if(av >80&& av<=90){
+window.alert("You got a B, your average mark is " + av);
+}
+else if(av >70&& av<=80){
+window.alert("You got a C, your average mark is " + av);
+}
+else if(av >60&& av<=70){
+window.alert("Yout got a D, your average mark is " + av );
+}
+else if (av >50&& av<=60){
+window.alert("You got an E, failed " + av);
+}
+else{
+window.alert("Please fill in all marks!");
+}
+    
+}
+    </script>
+</body>
+</html>

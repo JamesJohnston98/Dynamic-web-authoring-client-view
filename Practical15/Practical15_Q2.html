@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" language = "EN" ><head><title>Practical15_cookies</title>
+<meta charset = "UTF-8">
+<link rel = "stylesheet" type = "text/css" href = "style.css">
+<script type="text/javascript" language="JavaScript" src="library.js">
+</script>
+    <script language="JavaScript">
+  
+ 
+function DisplayCookie(){
+    var thecolor = GetCookie("color");
+    if(thecolor){
+    showSelectValue("coffeeform","color", thecolor);
+    setBG();
+    }else{
+        alert("You use the default color");
+    }
+}       
+        
+function setColor(){
+ var visitorcolor = getSelectValue("coffeeform","color");
+ var expHours = 24;
+ var expDate = new Date();
+ expDate.SetTime(expDate.getTime() + (expHours = 60 * 60 * 1000));
+ setBG();
+SetCookie("colorchoice", visitorcolor, expDate);
+alert("You have set the webpage color to " + vistorcolor);
+}      
+   
+function setBG(){
+document.backgroundColor= getSelectValue("coffeeform","color");
+}
+        
+function removeCookies(){
+    DeleteCookie('BG_Color');
+    var dColor = document.body.style.backgroundColor
+    alert("All cookies have been deleted and the color has been set back to default.");
+    document.body.style.backgroundColor = dColor;
+}
+        
+function Login(){
+    window.location.href = "Practical15_Q1.html";
+}
+     
+var setCookie = function (name, val) {
+    var expdays = 30;
+    var date = new Date();
+    date.setTime(date.getTime() + (expdays * 24 * 60 * 60 * 1000));
+    var exp = "exp=" + date.toGMTString();
+    document.cookie = name + "=" + val + "; " + exp;
+}    
+ 
+var getCookie = function (n) {
+    var name = n + "=";
+    var cookie_num = document.cookie.split(';');
+    for (var i = 0; i < cookie_num.length; i++) {
+        var colorc = cookie_num[i];
+        while (colorc.charAt(0) == ' ') colorc = colorc.substring(1);
+        if (colorc.indexOf(name) == 0) {
+            return colorc.substring(name.length, colorc.length);
+        }
+    }
+    return "";
+}
+
+
+function createCookie(){  
+document.onclick = function (change) {
+    if (change.target.className == 'color_select') {
+        var fColor = change.target.style.backgroundColor;
+        setCookie('BG_Color', fColor);
+        document.body.style.backgroundColor = fColor;
+    }
+}}
+
+window.onload = function () {
+    var favColor = document.body.style.backgroundColor;
+    var Background_color = getCookie('BG_Color');
+    if (Background_color === '') {
+        document.body.style.backgroundColor = fColor;
+    } else {
+      document.body.style.backgroundColor = Background_color;
+    }
+}
+
+
+
+    </script></head>
+    <body onload="DisplayCookie();">
+<form name="cookieform">
+<h1>Welcome to 16Coffee! <br />
+You can now set up the background colour.</h1>
+<p><b>A Background Color (Select a colour below:)</b> <select name="color" onchange=
+"setBG();">
+<option selected value="none">Select a Color</option>
+<option value="aqua" name = "aqua">aqua</option>
+<option value="fuchsia" name = "fuschia">fuchsia</option>
+<option value="lime" name = "lime">lime</option>
+<option value="teal" name = "teal">teal</option>
+<option value="white" name = "white">white</option>
+
+<option value="yellow">yellow</option>
+</select></p>
+<div id="colors">
+    <span class="color_select" style="background-color: red;" onclick = "CreateCookie();">RED</span>
+    <span class="color_select" style="background-color: orange;"onclick = "createCookie();">ORANGE</span>
+    <span class="color_select" style="background-color: greenyellow;"onclick = "createCookie();">GREENYELLOW</span>
+    <span class="color_select" style="background-color: blue;"onclick = "createCookie();">BLUE</span>
+    <span class="color_select" style="background-color: #66f7ff;"onclick = "createCookie();">TEAL</span>
+    <span class="color_select" style="background-color: #ff00f5;"onclick = "createCookie();">PINK</span>
+    <span class="color_select" style="background-color: palegreen"onclick = "createCookie();">PALE GREEN</span>
+    <span class="color_select" style="background-color: olive"onclick = "createCookie();">OLIVE</span>
+    <span class="color_select" style="background-color: rgba(0, 0, 0, 0.4);"onclick = "createCookie();">PALE GREY</span>
+ <span class="color_select" name = "reset" onclick = "removeCookies();">Reset to default</span>
+</div>
+<p><input type="button" value="Make Cookies" onclick="DisplayCookie();"> 
+<input type="button" value="Return to login" onclick="Login();"></p>
+        </form></body></html>

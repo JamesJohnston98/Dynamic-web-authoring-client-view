@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" language = "EN" ><head><title>Practical14_Q3_Reminder</title>
+<meta charset = "UTF-8">
+    <script language="JavaScript">
+
+    function ShowDay(num)
+    {
+      var day;    //will handle the result depending on the day of the week the webpage is loaded.
+      switch(num)
+      {
+        case 0:
+          day="Sunday" + "<br />" + "It's the Weekend!";
+          break;
+        case 1:
+          day="Monday" + "<br />" + "You need to be in practical class between 9am and 11am";
+          break;
+        case 2:
+          day="Tuesday" + "<br />" + "Continue to finish coursework";
+          break;
+        case 3:
+          day="Wednesday" + "<br />" + "Work on coursework";
+          break;
+        case 4:
+          day="Thursday" + "<br />" + "You need to be in class between 11am and 12noon";
+          break;
+        case 5:
+          day="Friday" + "<br />" + "Read over the lecture notes";
+          break;
+        case 6:
+          day="Saturday" + "<br />" + "Its the Weekend!";
+          break;
+        default:
+          day="Invalid day";
+      }
+      return day;
+    }
+
+    Date = new Date();
+
+    document.write("Today is ",ShowDay(Date.getDay()));
+
+    </script></head>
+    </html>

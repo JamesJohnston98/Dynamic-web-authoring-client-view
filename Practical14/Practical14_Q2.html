@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" language = "EN" >
+<head>
+<meta charset = "UTF-8">
+<title>Practical 14_Q2_Q3</title>
+<script type = "text/javascript" language = "JavaScript">
+ var days = new Array();
+    
+days[0]="Sunday";
+days[1]="Monday";
+days[2]="Tuesday";
+days[3]="Wednesday";
+days[4]="Thursday";
+days[5]="Friday";
+days[6]="Saturday";
+    
+    
+var Months = new Array();
+Months[0]="January";
+Months[1]="February";
+Months[2]="March";
+Months[3]="April";
+Months[4]="May";
+Months[5]="June";
+Months[6]="July";
+Months[7]="August";
+Months[8]="September";
+Months[9]="October";
+Months[10]="November";
+Months[11]="December";   
+    
+    
+
+function checkday(){
+var Day = new Date();
+var year = document.date.year.value.getFullYear();
+var Month = document.date.month.value.getMonth();
+var Day = document.date.day.value.getDay(); 
+var longdate = Day[days]; 
+document.date.result.value = longdate; 
+ document.date.calendarpage.value = longdate;
+}
+    
+function showTime(){
+    var now = new Date();
+    var hour = now.getHours();
+    var mins = now.getMinutes();
+    var secs = now.getSeconds();
+    
+    var CurrentT = "" + ((hour > 12) ? hour - 12 : hour);
+    ((CurrentT == 0) ? CurrentT = 12 : CurrentT);
+    CurrentT  += ((mins < 10) ? ":0" : ":") + mins;
+    CurrentT  += ((secs < 10) ? ":0" : ":") + secs;
+    CurrentT  += (hour >= 12) ? " PM" : " AM";
+ 
+    document.date.time.value = CurrentT;
+}
+
+    </script></head>
+<body bgcolor = "#FFA07A" text = "black" onload="setInterval('showTime()',1000);"> 
+<form id = "date" name = "date">
+<h2>Day Checker</h2>
+<label>Year(yyyy):</label><input type = "text" name = "year"><br />
+<label>Month(mm):</label><input type = "text" name = "month"><br />
+<label>Day(dd)</label><input type = "text" name = "day"><br />
+    
+    
+<input name = "day" size = "45">
+    <br /><br />
+<input name="time" size="45"><br>
+<label>Click Submit to begin</label>
+<input type = "button" name = "submit" value = "start checking" onclick = "checkday();">
+</form>
+    
+<p id = "result" name = "result"></p>
+    </body>
+</html>

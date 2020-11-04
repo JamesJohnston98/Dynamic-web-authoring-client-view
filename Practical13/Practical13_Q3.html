@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" language = "EN" >
+<head>
+<meta charset = "UTF-8">
+<title>Practical 13_Q1</title>
+</head>
+<body bgcolor = "#FFA07A" text = "black"> 
+<script type = "text/javascript" language = "JavaScript">
+
+
+function Checkpassword(){
+
+    var value = document.lab.password.value;
+    
+    if (value.length < 6){
+        alert("You shall enter a password with more than 6 characters");
+        document.lab.password.focus();
+    }else{
+        alert("You have set your password");
+    }
+}
+    </script>
+<form name = "lab">
+<p>Please enter a password with more than 6 characters</p>
+<input type = "password" name = "password" id = "password">
+<input type = "button" id = "submit" value = "Submit" onclick = "Checkpassword();"></form>
+    </body>
+</html>

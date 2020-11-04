@@ -1,0 +1,15 @@
+body {
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.color_select{
+  width: 100px;
+  height: 35px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: 1px solid white;
+ font-size: 12px;
+}

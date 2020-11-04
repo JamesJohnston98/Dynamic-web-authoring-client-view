@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta charset = "UTF-8">
+<title>Practical20_Q4i</title>
+<script type = "text/javascript" src = "js/jquery-3.1.1.js">
+</script>
+<script>
+$(document).ready(function(){
+    $(".btn1").click(function(){
+    $("p").show(2000);
+})
+    $(".btn2").click(function(){
+    $("p").hide("slow");
+    });
+    
+    
+});
+
+
+   
+</script>
+    </head>
+<body>
+<h2>Show and Hide</h2>
+<p>Click the buttons to show and hide me</p>
+<form>
+<input type = "button" class = "btn1" value = "Show">
+<input type = "button" class = "btn2" value = "hide">
+    
+</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta charset = "UTF-8">
+<title>Practical20_Q4iii</title>
+<script type = "text/javascript" src = "js/jquery-3.1.1.js">
+</script>
+<script>
+$(document).ready(function (){
+    $(".slidedown").click(function(){
+        $(".detail").slideDown();
+    });
+    $(".slideup").click(function(){
+        $(".detail").slideUp();
+    });
+
+$(".toggle").click(function(){
+$(".detail").slideToggle();      
+                  
+});
+    
+});   
+</script>
+    </head>
+<body>
+<h2>Fade In Fade Out</h2>
+<p>Fade in and out</p>
+<img src = "mark1.jpg" width = "250px" height = "200px" />
+<p class = "detail" style = "display:none;">Mark 1 Escort</p>
+<button class = "slidedown">Slide Down</button>
+<button class = "slideup">Slide Up</button>
+<button class = "toggle">Toggle</button>
+</body>
+</html>

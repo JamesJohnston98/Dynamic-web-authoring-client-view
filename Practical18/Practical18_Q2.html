@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Practical18_Q2</title>
+<meta charset = "UTF-8">
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type = "text/javascript">
+    
+
+function zoomin(){
+    $(document).ready(function(){
+        $("input[name = 'zoomin']").click(function(){
+        $("img").each(function (){
+        $(this).animate({
+        width: '+=20%',
+        height:'+=20%'
+        });
+    });
+});
+            
+ }); 
+}
+
+function zoomout(){
+    $(document).ready(function(){
+        $("input[name = 'zoomout']").click(function(){
+        $("img").each(function (){
+        $(this).animate({
+        width: '-=20%',
+        height:'-=20%'
+        });
+    });
+});
+            
+ }); 
+}
+    
+function PreviousSet(){
+$("input[name = 'previous']").click(function(){
+$('#img1').attr('src', 'anglia.jpg');
+$('#img2').attr('src', 'mark1.jpg');
+$('#img3').attr('src', 'mark2.jpg');
+$('#img4').attr('src', 'starlet.jpg');   
+});
+}
+    
+function NextSet(){
+$("input[name = 'next']").click(function(){
+$('#img1').attr('src', 'ballintoy1.jpg');
+$('#img2').attr('src', 'ballycastle1.jpg');
+$('#img3').attr('src', 'ballintoy2.jpg');
+$('#img4').attr('src', 'ballycastle2.jpg');
+});
+}
+ 
+
+
+
+</script>
+    </head>
+<body>
+
+  <h1>Rally Cars and Tourism</h1>
+  
+    <img id ="img1" src="anglia.jpg" style= "height: 200px;">
+    <img id = "img2" src= "mark1.jpg" style = "height: 200px;">
+    <img id = "img3" src="mark2.jpg" style = "height: 200px;">
+    <img id = "img4" src="starlet.jpg" style = "height: 200px";>
+  <br>
+<input type = "button" name = "zoomin" value = "Zoom In" onclick = "zoomin();">
+<input type = "button" name = "zoomout" value = "Zoom Out" onclick = "zoomout();">
+<br />
+<input type = "button" name = "next" value = "Next Set" onclick = "NextSet();">
+<input type = "button" name = "previous" value = "Previous Set" onclick = "PreviousSet();">
+    </body></html>

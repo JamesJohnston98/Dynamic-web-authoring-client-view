@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" language = "EN" ><head><title>Practical14_Q1</title>
+<meta charset = "UTF-8">
+<script type="text/javascript" language="JAVASCRIPT" src=
+"calendar.js">
+</script>
+    
+<script type="text/javascript" language="JavaScript">
+var year = "";
+var day = "";
+var month = "";
+var firstdate = new Date();
+
+    
+function ChecktheDay(){
+	var question1 = "Enter the year to see what day a particular date fell that year";
+    year = window.prompt(question1,"1998");
+    month = window.prompt("Enter the month? (enter a value between: 1-12)","1") - 1;
+    day = window.prompt("Enter the day? (enter a value between: 1-31)","22");
+
+    fdate = new Date(year,month,day);
+
+
+    DaydisplayInfo = "The Day Was ";
+    DaydisplayInfo += Days[fdate.getDay()];
+    yeardisplayInfo = fdate.getYear();
+    monthdisplayInfo = Months[fdate.getMonth()];
+    
+    document.date.day.value = DaydisplayInfo;
+    document.date.month.value = monthdisplayInfo;
+    document.date.year.value = yeardisplayInfo;
+}
+
+</script>
+</head>
+<body bgcolor = "#FFA07A" text = "black"> 
+<form id = "date" name = "date">
+<h2>Day Checker</h2>
+<label>Day:</label><input name = "day" size = "100"><br />
+<label>Month(mm):</label><input name = "month" size = "45"><br />
+<label>Year(yyyy)</label><input name = "year" size = "45"><br />
+    <br /><br />
+<label>Click the button to begin</label>
+<input type = "button" name = "submit" value = "start checking" onclick = "ChecktheDay();">
+</form>
+</body>
+</html>

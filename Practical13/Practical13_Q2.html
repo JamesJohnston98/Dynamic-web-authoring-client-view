@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" language = "EN" >
+<head>
+<meta charset = "UTF-8">
+<title>Practical 13_Q2</title>
+</head>
+<body bgcolor = "black" text = "white"> 
+<script type = "text/javascript" language = "JavaScript">
+
+
+function labTime(){
+var module = document.lab.module.value;
+
+document.write("<p> This is the first week of semester 2. </p>");
+document.write("<p> We have " +module+ " on Monday and Thursday.</p>");
+    
+}
+    </script>
+<form name = "lab">
+<p>This is the first week of semester 2. <br />
+We have XX classes on Monday and Thursday.</p>
+    
+<input type = "text" name = "module" id = "module" placeholder = "Enter Module Code">
+<input type = "button" id = "submit" value = "OK" onclick = "labTime();"></form>
+    </body>
+</html>

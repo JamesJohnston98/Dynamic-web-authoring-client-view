@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF-8">
+<title>Practical19_Q4</title>
+<script type="text/javascript" src="js/jquery-3.1.1.js">
+</script>
+<script type = "text/javascript">  
+$(function(){
+    $('#ptarget').hover(over,out);
+});
+    
+function over(event){
+    $('#ptarget').css("font-style","italic");
+}
+function out(event){
+    $('#ptarget').css("font-style","normal");
+}
+
+$(function(){
+    $('img').hover(imgover,imgout);
+});
+  
+function imgover(event){
+    $('img').attr('src','../Images/starletinfo.jpg');
+}
+function imgout(event){
+    $('img').attr('src','../Images/angliainfo.jpg');
+}
+    
+$(document).ready(function(){
+    $("img").on('click', function(){
+     alert($('img').attr('src'));
+    });
+});
+    </script> 
+    </head>
+    <body>
+<h1>Capture Hover Events</h1>
+<p id = "ptarget">Here is a useful link</p>
+
+<img src = "anglia.jpg" width = "250" height = "200">
+    </body>
+</html>

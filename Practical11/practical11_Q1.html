@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<head><title>Week 11 - Slideshow</title>
+<script type='text/javascript' language='Javascript'>
+var rally_car = new Array();
+rally_car[1] = new Image();
+rally_car[2] = new Image();
+rally_car[3] = new Image();
+rally_car[4] = new Image();
+
+
+rally_car[1].src = "../Images/angliainfo.jpg";
+rally_car[2].src = "../Images/mark1info.jpg";
+rally_car[3].src = "../Images/mark2info.jpg";
+rally_car[4].src = "../Images/starletinfo.jpg";
+
+
+/*Callout: The text captions are stored in another array.*/
+var Rally_Note= new Array();
+Rally_Note[1] = "Ford Anglia WRC at Loughgall Stages 2018";
+Rally_Note[2] = "Keith White @ Loughgall Stages 2018";
+Rally_Note[3] = "Barry Morris Sideways @ Loughgall Stages 2018";
+Rally_Note[4] = "Jason Black flat out at the Loughgall Stage 2018"; 
+
+var IMGnum = 1;
+var totalIMG = rally_car.length - 1;
+
+function showImage(direction){
+    if (direction == "next"){
+        (IMGnum == totalIMG) ? IMGnum = 1 : IMGnum++;
+    }else{
+        (IMGnum == 1) ? IMGnum = totalIMG : IMGnum--; 
+    }
+    if (document.images){
+        document.Image_Location.src = rally_car[IMGnum].src;
+        document.Control_Buttons.Rally_Info.value = Rally_Note[IMGnum];
+        document.Control_Buttons.Current_Num.value = IMGnum;
+    }
+}
+//-->
+
+    </script>
+    </head>  
+<body bgcolor="white">
+<div align="CENTER">
+<h2>Photos taken by me at the Loughgall Rally 2018</h2>
+
+<img src="../Images/angliainfo.jpg" name="Image_Location" width="320"
+height="240" alt="Slide show images appear here."> 
+
+<form name="Control_Buttons">
+<p><textarea name="Rally_Info" rows="4" cols="50">Click Next to begin the slide show and see Several Images I have captured at the Loughgall Stages Rally 2018.</textarea><br>
+<br>
+<input type="button" value="Previous" onclick="showImage('previous');"> 
+<input type="button" value="Next" onclick="showImage('next');"><br>
+<br>
+Slide Number: 
+<input type="TEXT" value="1" name="Current_Num" size="5"></p>
+</form>
+</div>
+</body>
+</html>
