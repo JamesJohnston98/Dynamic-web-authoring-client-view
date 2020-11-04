@@ -1,0 +1,73 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns= "http://www.w3.org/1999/xhtml" xml:lang = "eng" lang = "en">
+<head>
+<link rel = "stylesheet" type = "text/css" href = "practical2.css" />    
+    <title>Practical 2</title>
+</head>
+<body>
+<h1 id = "Welcome"> Welcome to Ulster</h1>
+ <img src ="Images/UlsterUni.jpg" alt = "Ulster University Logo" /> 
+    <form action = "submit.html" method = "get" id = "Contact">
+<label>Student Name: </label> <input type = "text" id = "StudentName"/><br /><br />
+<label>Term Address: </label><input type = "text" id = "TermAddress"/> <br /><br />
+<label>Email Address: </label><input type = "text" id = "EmailAddress"/><br /><br />
+<label>Postcode: </label><input type = "text" id = "Postcode"/> <br /><br />
+<label>phone Number </label><input type = "text" id = "Phone Number"/><br /><br />
+<h2 id = "Module information">Module Information</h2>
+    
+    <table summary = "List of modules that make up the course.">
+<tr>
+<th>Module Title</th>
+<th>Module Code</th>
+<th>Lecturer</th>
+<th>Class Time</th>
+<th>Lab Time</th>
+</tr>  
+<tr>
+<td width = "15%">Dynamic Web Authoring</td>
+<td>COM311</td>
+<td>Jane Zheng</td>
+<td>Monday 11:15</td>
+<td>Monday 14:15</td>
+</tr>
+<tr>
+<td width = "15%">(Add other module information)</td>
+<td>(Add other module information)</td>
+<td>(Add other module information)</td>
+<td>(Add other module information)</td>
+<td>(Add other module information)</td></tr>
+<tr>
+<td width = "15%">(Add other module information)</td>
+<td>(Add other module information)</td>
+<td>(Add other module information)</td>
+<td>(Add other module information)</td>
+<td>(Add other module information)</td></tr>
+</table> 
+<h2>Course Information</h2>
+<input type="radio" name="course" value="Interactive_Multimedia_Design" id = "InteractiveMultimediaDesign"/> <label>Interactive Multimedia Design</label>
+<input type="radio" name="course" value="Computer_Technology" id = "ComputerTechnology" /><label>Computer Technology</label>
+<input type="radio" name="course" value="Software_Engineering" id = "SoftwareEngineering" /><label>Software Engineering</label>
+<input type="radio" name="course" value="Computer_Science" id = "ComputerScience"/> <label>Computer Science</label>
+
+<h2>How would you like to be contacted</h2>
+<input type = "checkbox" name = "contact" value = "Email"  id = "email"/>Email
+<input type = "checkbox" name = "contact" value = "Mobile" id = "mobile"/>Mobile
+<input type = "checkbox" name = "contact" value = "Post" id = "post"/>Post
+<input type = "checkbox" name = "contact" value = "Home Visit" id = "homevisit"/>Home Visit
+
+
+<h2>Other Comments</h2>
+<textarea rows = "10" cols = "15" id = "AdditionalComments">Any Additional Comments</textarea>
+<br /> <br />
+
+<button type = "submit" value = "submit" id = "submit">Submit</button>
+
+<input type = "reset" value = "Reset Form" id = "reset"/><br /><br />
+    
+<div class = "Link" id = "link">More information about the University Can be found <a href = "https://www.ulster.ac.uk/" target = "_blank">Here</a></div>   
+    
+    </form>
+
+    </body></html>
